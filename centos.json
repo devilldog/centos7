@@ -99,6 +99,21 @@
       "output": "box/{{.Provider}}/{{user `vm_name`}}-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}.box",
       "type": "vagrant",
       "vagrantfile_template": "{{ user `vagrantfile_template` }}"
+    },
+    {
+      "type": "vsphere",
+      "cluster": "xxx",
+      "datacenter": "xxx",
+      "datastore": "prod",
+      "host": "192.168.1.6",
+      "username": "administrator@vsphere.local",
+      "password": "xxx",
+      "vm_name": "centos71",
+      "disk_mode": "thin",
+      "insecure": true,
+      "vm_folder": "",
+      "vm_network": "xxx",
+      "overwrite": false
     }
   ],
   "provisioners": [
@@ -146,7 +161,7 @@
     "disk_size": "65536",
     "docker": "false",
     "ftp_proxy": "{{env `ftp_proxy`}}",
-    "headless": "",
+    "headless": "false",
     "http_proxy": "{{env `http_proxy`}}",
     "https_proxy": "{{env `https_proxy`}}",
     "install_vagrant_key": "true",
